@@ -8,6 +8,7 @@ include:
 elasticsearch_pkg:
   pkg.installed:
     - name: {{ elasticsearch.pkg }}
-    - version: {{ major_version }}.*
+    - version: {{ salt.pillar.get('elasticsearch:version', major_version ~ ".*") }}
+    - hold: {{ salt.pillar.get('elasticsearch:version_hold', False) }}
     - require:
       - sls: elasticsearch.repo

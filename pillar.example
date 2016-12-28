@@ -1,5 +1,7 @@
 elasticsearch:
   major_version: 2
+  version: 2.4.0
+  version_hold: true
   config:
     cluster.name: my-application
     node.name: node2
