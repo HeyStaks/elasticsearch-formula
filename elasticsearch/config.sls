@@ -14,8 +14,9 @@ elasticsearch_cfg:
 
 {% set data_dir = salt['pillar.get']('elasticsearch:config:path.data') %}
 {% set log_dir = salt['pillar.get']('elasticsearch:config:path.logs') %}
+{% set repo_dir = salt['pillar.get']('elasticsearch:config:path.repo') %}
 
-{% for dir in (data_dir, log_dir) %}
+{% for dir in (data_dir, log_dir, repo_dir) %}
 {% if dir %}
 {{ dir }}:
   file.directory:
